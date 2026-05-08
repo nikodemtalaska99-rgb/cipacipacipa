@@ -9,9 +9,5 @@ components:
     env:
       TOKEN: ${TOKEN}
     persistence:
-      # To daje botowi uprawnienia do zapisu w /app/assets
       - path: /app/assets
-        size: 1Gi
-      # To zabezpiecza bazę danych quick.db
-      - path: /app/json.sqlite
         size: 1Gi
