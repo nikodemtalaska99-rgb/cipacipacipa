@@ -1,0 +1,55 @@
+{
+    "prefix": "!",
+    "colors": {
+        "primary": "#ffb6c1",
+        "accent": "#f5f5f5",
+        "success": "#a3d9a5",
+        "error": "#ff9e9e",
+        "warning": "#ffe082",
+        "premium": "#e1bee7"
+    },
+    "brandingThumbnail": "https://cdn.discordapp.com/attachments/1501204172756746373/1501630185034743980/IMG_1515.jpg?ex=69fcc597&is=69fb7417&hm=d8b2f0b2aa3e63a9adce18f0548cb739f657d436cc94d38018279a32af80d52d&",
+    "emojis": {
+        "reply": "╰",
+        "dot": "・",
+        "sep": "｜",
+        "loading": "⟳",
+        "success": "✓",
+        "error": "✕",
+        "info": "✦",
+        "heart": "♡",
+        "tag": "#",
+        "user": "@",
+        "server": "⌂",
+        "link": "🔗"
+    },
+    "categoryIcons": {
+        "Community": "",
+        "Utility": "",
+        "Admin": "",
+        "Fun": ""
+    },
+    "footer": "/geekland",
+    "ownerId": "1445519608017584321",
+    "boostChannelId": "YOUR_BOOST_CHANNEL_ID_HERE",
+    "levelChannelId": "YOUR_LEVEL_CHANNEL_ID_HERE",
+    "fastFingersChannelId": "1501584278390046821",
+    "quizChannelId": "1501584278390046821",
+    "managementRoles": [
+        "Zarząd",
+        "Owner",
+        "Admin"
+    ],
+    "antiPing": {
+        "limit": 3,
+        "muteDuration": 30000
+    },
+    "jailedRoleId": "1501653575841874144",
+    "mutedRoleId": "1501653577192439910",
+    "imutedRoleId": "1501653578563981484",
+    "jailedChannelId": "1501653580548014254",
+    "memberLogsChannelId": "1501617871414104115",
+    "textLogsChannelId": "1501617869631258805",
+    "birthdayChannelId": "",
+    "birthdayRoleId": ""
+}
