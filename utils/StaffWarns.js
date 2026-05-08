@@ -1,9 +1,18 @@
 const fs = require('fs');
 const path = require('path');
-const storagePath = path.join(__dirname, '../../assets/staff_warns.json');
 
-if (!fs.existsSync(path.dirname(storagePath))) fs.mkdirSync(path.dirname(storagePath), { recursive: true });
-if (!fs.existsSync(storagePath)) fs.writeFileSync(storagePath, JSON.stringify({}, null, 4));
+// Zmieniamy to, aby zawsze celowało w folder 'assets' wewnątrz głównego katalogu bota
+const storagePath = path.join(process.cwd(), 'assets', 'staff_warns.json');
+
+// Tworzenie folderu assets, jeśli nie istnieje
+if (!fs.existsSync(path.dirname(storagePath))) {
+    fs.mkdirSync(path.dirname(storagePath), { recursive: true });
+}
+
+// Tworzenie pliku json, jeśli nie istnieje
+if (!fs.existsSync(storagePath)) {
+    fs.writeFileSync(storagePath, JSON.stringify({}, null, 4));
+}
 
 class StaffWarns {
     static getWarns() {

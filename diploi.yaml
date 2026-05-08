@@ -9,16 +9,16 @@ components:
     # Komenda startowa
     run: node index.js
     
-    # Zmienne środowiskowe (TOKEN ustawisz w panelu Diploi)
+    # Zmienne środowiskowe
     env:
       TOKEN: ${TOKEN}
     
-    # Tutaj naprawiamy problem z uprawnieniami i zapisem danych:
+    # Trwałe przechowywanie danych
     mounts:
-      # Naprawa błędu /assets (mapujemy folder wewnątrz /app)
+      # To naprawia błąd EACCES dla /assets
       - path: /app/assets
         size: 1Gi
       
-      # Zapis bazy danych quick.db (często plik json.sqlite)
+      # To chroni Twoją bazę danych quick.db
       - path: /app/json.sqlite
         size: 1Gi
