@@ -39,4 +39,13 @@ process.on('uncaughtException', error => {
     console.error('Uncaught exception:'.red, error);
 });
 
+// Dummy HTTP server to satisfy Render's port requirement
+const http = require('http');
+http.createServer((req, res) => {
+    res.write('Bot is running!');
+    res.end();
+}).listen(process.env.PORT || 3000, () => {
+    console.log(`Dummy web server listening on port ${process.env.PORT || 3000}`.green);
+});
+
 client.login(process.env.TOKEN);

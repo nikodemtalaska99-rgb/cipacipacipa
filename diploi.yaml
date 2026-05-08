@@ -2,12 +2,11 @@ diploiVersion: v1.0
 project: discord-bot
 
 components:
-  - identifier: bot
+  - name: Discord Bot
+    identifier: bot
     package: nodejs-20
-    scripts:
-      run: node index.js
+    containerCommands:
+      productionStart: node index.js
+      developmentStart: node index.js
     env:
       TOKEN: ${TOKEN}
-    persistence:
-      - path: /app/assets
-        size: 1Gi
