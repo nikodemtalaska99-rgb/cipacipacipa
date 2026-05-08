@@ -45,7 +45,7 @@ const PORT = process.env.PORT || 10000;
 http.createServer((req, res) => {
     res.write('Bot is running!');
     res.end();
-}).listen(PORT, '74.220.50.0/24', () => {
+}).listen(PORT, '0.0.0.0', () => {
     console.log(`Dummy web server listening on port ${PORT}`.green);
 });
 
