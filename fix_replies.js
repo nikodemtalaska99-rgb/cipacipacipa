@@ -21,17 +21,17 @@ function processFile(filePath) {
     // Replace message.reply('text') or message.reply("text")
     // Watch out for template literals, we can ignore them or handle simple ones.
     const regex = /message\.reply\(['"]([^'"]+)['"]\)/g;
-    
+
     let needsUI = false;
-    
+
     content = content.replace(regex, (match, text) => {
         needsUI = true;
         // Check if it's a success message
-        if (text.includes('âś…') || text.toLowerCase().includes('pomyĹ›lnie') || text.toLowerCase().includes('zaktualizowano') || text.toLowerCase().includes('wyczyszczono')) {
+        if (text.includes('âś…') || text.toLowerCase().includes('pomyślnie') || text.toLowerCase().includes('zaktualizowano') || text.toLowerCase().includes('wyczyszczono')) {
             let cleanText = text.replace(/âś…\s*/, '');
             return `message.reply({ embeds: [UI.success('${cleanText}')] })`;
         }
-        
+
         let cleanText = text.replace(/âťŚ\s*/, '');
         return `message.reply({ embeds: [UI.error('${cleanText}')] })`;
     });
@@ -41,7 +41,7 @@ function processFile(filePath) {
         const depth = filePath.split(path.sep).length - path.join(__dirname, 'commands').split(path.sep).length;
         let reqPath = '../../utils/UI';
         if (depth === 1) reqPath = '../utils/UI';
-        
+
         content = `const UI = require('${reqPath}');\n` + content;
     }
 

@@ -31,8 +31,7 @@ module.exports = {
             .setAuthor({ name: `Statystyki Bota: ${client.user.username}`, iconURL: client.user.displayAvatarURL() })
             .setDescription(`\`\`\`📊 ' .gg/geekland × Informacje o bocie\`\`\`\n` +
                 `> ⏱️ **× Uptime:** \`${uptimeString}\`\n` +
-                `> 📡 **× Ping:** \`${client.ws.ping}ms\`\n` +
-                `> 💾 **× Pamięć RAM:** \`${memoryUsage.toFixed(2)} MB / ${totalMemory.toFixed(2)} GB\`\n\n` +
+                `> 📡 **× Ping:** \`${client.ws.ping}ms\`\n` + `> 💾 **× Pamięć RAM:** \`${memoryUsage.toFixed(2)} MB / ${totalMemory.toFixed(2)} GB\`\n\n` +
                 `\`\`\`🌍 ' .gg/geekland × Statystyki Sieci\`\`\`\n` +
                 `> 🖥️ **× Serwery:** \`${totalGuilds}\`\n` +
                 `> 👥 **× Użytkownicy:** \`${totalUsers}\`\n` +
