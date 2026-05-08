@@ -5,20 +5,13 @@ components:
   - name: bot
     type: nodejs
     runtime: node-20
-    
-    # Komenda startowa
     run: node index.js
-    
-    # Zmienne środowiskowe
     env:
       TOKEN: ${TOKEN}
-    
-    # Trwałe przechowywanie danych
     mounts:
-      # To naprawia błąd EACCES dla /assets
+      # Mapujemy fizyczne miejsce na dysku do folderu /app/assets
       - path: /app/assets
         size: 1Gi
-      
-      # To chroni Twoją bazę danych quick.db
+      # Mapujemy miejsce dla bazy danych quick.db
       - path: /app/json.sqlite
         size: 1Gi
