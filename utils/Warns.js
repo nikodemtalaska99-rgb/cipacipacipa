@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const storagePath = path.resolve(process.cwd(), 'assets', 'user_warns.json');
+const storagePath = path.join(__dirname, '..', 'assets', 'user_warns.json');
 
 if (!fs.existsSync(path.dirname(storagePath))) {
     fs.mkdirSync(path.dirname(storagePath), { recursive: true });

@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-// Używamy path.resolve i process.cwd(), aby zawsze celować w folder assets w katalogu głównym bota
-const storagePath = path.resolve(process.cwd(), 'assets', 'staff_warns.json');
+// Używamy path.join z __dirname, aby zawsze celować w folder assets względem tego pliku
+const storagePath = path.join(__dirname, '..', 'assets', 'staff_warns.json');
 
 // Tworzenie folderu assets, jeśli nie istnieje
 const assetsDir = path.dirname(storagePath);

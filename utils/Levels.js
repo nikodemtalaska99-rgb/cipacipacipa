@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const storagePath = path.resolve(process.cwd(), 'assets', 'levels.json');
+const storagePath = path.join(__dirname, '..', 'assets', 'levels.json');
 
 // Initialize storage
 if (!fs.existsSync(path.dirname(storagePath))) {
