@@ -1,4 +1,5 @@
 const { QuickDB } = require("quick.db");
-const db = new QuickDB();
+const path = require("path");
+const db = new QuickDB({ filePath: path.join(__dirname, "../json.sqlite") });
 
 module.exports = db;
