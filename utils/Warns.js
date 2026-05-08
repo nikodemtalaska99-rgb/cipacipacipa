@@ -1,8 +1,10 @@
 const fs = require('fs');
 const path = require('path');
-const storagePath = path.join(__dirname, '../assets/user_warns.json');
+const storagePath = path.resolve(process.cwd(), 'assets', 'user_warns.json');
 
-if (!fs.existsSync(path.dirname(storagePath))) fs.mkdirSync(path.dirname(storagePath), { recursive: true });
+if (!fs.existsSync(path.dirname(storagePath))) {
+    fs.mkdirSync(path.dirname(storagePath), { recursive: true });
+}
 if (!fs.existsSync(storagePath)) fs.writeFileSync(storagePath, JSON.stringify({}, null, 4));
 
 class Warns {

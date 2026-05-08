@@ -1,12 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 
-// Używamy __dirname, aby zawsze celować w folder 'assets' względem lokalizacji tego pliku
-const storagePath = path.join(__dirname, '../assets', 'staff_warns.json');
+// Używamy path.resolve i process.cwd(), aby zawsze celować w folder assets w katalogu głównym bota
+const storagePath = path.resolve(process.cwd(), 'assets', 'staff_warns.json');
 
 // Tworzenie folderu assets, jeśli nie istnieje
-if (!fs.existsSync(path.dirname(storagePath))) {
-    fs.mkdirSync(path.dirname(storagePath), { recursive: true });
+const assetsDir = path.dirname(storagePath);
+if (!fs.existsSync(assetsDir)) {
+    fs.mkdirSync(assetsDir, { recursive: true });
 }
 
 // Tworzenie pliku json, jeśli nie istnieje
