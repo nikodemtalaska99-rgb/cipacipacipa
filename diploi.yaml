@@ -1,4 +1,4 @@
-diploiVersion: "v1.0"
+diploiVersion: v1.0
 project: discord-bot
 
 components:
