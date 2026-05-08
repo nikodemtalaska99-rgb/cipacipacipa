@@ -41,11 +41,12 @@ process.on('uncaughtException', error => {
 
 // Dummy HTTP server to satisfy Render's port requirement
 const http = require('http');
+const PORT = process.env.PORT || 10000;
 http.createServer((req, res) => {
     res.write('Bot is running!');
     res.end();
-}).listen(process.env.PORT || 3000, () => {
-    console.log(`Dummy web server listening on port ${process.env.PORT || 3000}`.green);
+}).listen(PORT, '74.220.50.0/24', () => {
+    console.log(`Dummy web server listening on port ${PORT}`.green);
 });
 
 client.login(process.env.TOKEN);
