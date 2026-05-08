@@ -3,19 +3,15 @@ project: discord-bot
 
 components:
   - identifier: bot
-    package: nodejs-20 # Łączy 'type' i 'runtime' w jedno pole
-    
-    # W nowej wersji używamy 'scripts' zamiast 'run'
+    package: nodejs-20
     scripts:
       run: node index.js
-    
-    # Zmienne środowiskowe
     env:
       TOKEN: ${TOKEN}
-    
-    # Nowy format montowania wolumenów
     persistence:
+      # To daje botowi uprawnienia do zapisu w /app/assets
       - path: /app/assets
         size: 1Gi
+      # To zabezpiecza bazę danych quick.db
       - path: /app/json.sqlite
         size: 1Gi
