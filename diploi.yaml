@@ -1,0 +1,16 @@
+version: "1"
+project: tried-bot
+
+components:
+  - name: bot
+    type: nodejs
+    runtime: node-20
+    
+    run: node index.js
+    
+    env:
+      TOKEN: ${TOKEN}
+    
+    mounts:
+      - path: /app/json.sqlite
+        size: 1Gi
