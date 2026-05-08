@@ -23,7 +23,7 @@ module.exports = {
 
             // 2. Create Join Channel
             const joinChannel = await guild.channels.create({
-                name: 'âž• Kliknij, aby stworzyÄ‡',
+                name: '➕ Kliknij, aby stworzyć',
                 type: ChannelType.GuildVoice,
                 parent: category.id
             });
@@ -45,23 +45,23 @@ module.exports = {
             const embed = new EmbedBuilder()
                 .setColor(config.colors.primary)
                 .setTitle('VoiceMaster Interface')
-                .setDescription('Use the buttons below to control your voice channel.\n\n**Button Usage**\nđź”’ â€” `Lock` the voice channel\nđź”“ â€” `Unlock` the voice channel\nđź‘» â€” `Ghost` the voice channel\nđź‘ď¸Ź â€” `Reveal` the voice channel\nđź‘‘ â€” `Claim` the voice channel\nđź”Ś â€” `Disconnect` a member\nđźŽ® â€” `Start` an activity\nâ„ąď¸Ź â€” `View` channel information\nâž• â€” `Increase` the user limit\nâž– â€” `Decrease` the user limit')
-                .setThumbnail('https://media.discordapp.net/attachments/1496116899602370762/1496117003193286807/image.png?ex=69e8b70a&is=69e7658a&hm=c5f03450496b0e4454ae02111286b7ebłąd9163163d05825b3c5ebf2c610134ec9&=&format=webp&quality=lossless'); // Placeholder or user provided logo if available
+                .setDescription('Use the buttons below to control your voice channel.\n\n**Button Usage**\n🔒 — `Lock` the voice channel\n🔓 — `Unlock` the voice channel\n👻 — `Ghost` the voice channel\n👁️ — `Reveal` the voice channel\n👑 — `Claim` the voice channel\n🔌 — `Disconnect` a member\n🎮 — `Start` an activity\nℹ️ — `View` channel information\n➕ — `Increase` the user limit\n➖ — `Decrease` the user limit')
+                .setThumbnail('https://media.discordapp.net/attachments/1496116899602370762/1496117003193286807/image.png'); // Cleaned up URL for safety
 
             const row1 = new ActionRowBuilder().addComponents(
-                new ButtonBuilder().setCustomId('vm_lock').setEmoji('đź”’').setStyle(ButtonStyle.Secondary),
-                new ButtonBuilder().setCustomId('vm_unlock').setEmoji('đź”“').setStyle(ButtonStyle.Secondary),
-                new ButtonBuilder().setCustomId('vm_ghost').setEmoji('đź‘»').setStyle(ButtonStyle.Secondary),
-                new ButtonBuilder().setCustomId('vm_reveal').setEmoji('đź‘ď¸Ź').setStyle(ButtonStyle.Secondary),
-                new ButtonBuilder().setCustomId('vm_claim').setEmoji('đź‘‘').setStyle(ButtonStyle.Secondary)
+                new ButtonBuilder().setCustomId('vm_lock').setEmoji('🔒').setStyle(ButtonStyle.Secondary),
+                new ButtonBuilder().setCustomId('vm_unlock').setEmoji('🔓').setStyle(ButtonStyle.Secondary),
+                new ButtonBuilder().setCustomId('vm_ghost').setEmoji('👻').setStyle(ButtonStyle.Secondary),
+                new ButtonBuilder().setCustomId('vm_reveal').setEmoji('👁️').setStyle(ButtonStyle.Secondary),
+                new ButtonBuilder().setCustomId('vm_claim').setEmoji('👑').setStyle(ButtonStyle.Secondary)
             );
 
             const row2 = new ActionRowBuilder().addComponents(
-                new ButtonBuilder().setCustomId('vm_disconnect').setEmoji('đź”Ś').setStyle(ButtonStyle.Secondary),
-                new ButtonBuilder().setCustomId('vm_activity').setEmoji('đźŽ®').setStyle(ButtonStyle.Secondary),
-                new ButtonBuilder().setCustomId('vm_info').setEmoji('â„ąď¸Ź').setStyle(ButtonStyle.Secondary),
-                new ButtonBuilder().setCustomId('vm_increase').setEmoji('âž•').setStyle(ButtonStyle.Secondary),
-                new ButtonBuilder().setCustomId('vm_decrease').setEmoji('âž–').setStyle(ButtonStyle.Secondary)
+                new ButtonBuilder().setCustomId('vm_disconnect').setEmoji('🔌').setStyle(ButtonStyle.Secondary),
+                new ButtonBuilder().setCustomId('vm_activity').setEmoji('🎮').setStyle(ButtonStyle.Secondary),
+                new ButtonBuilder().setCustomId('vm_info').setEmoji('ℹ️').setStyle(ButtonStyle.Secondary),
+                new ButtonBuilder().setCustomId('vm_increase').setEmoji('➕').setStyle(ButtonStyle.Secondary),
+                new ButtonBuilder().setCustomId('vm_decrease').setEmoji('➖').setStyle(ButtonStyle.Secondary)
             );
 
             await interfaceChannel.send({ embeds: [embed], components: [row1, row2] });
@@ -75,11 +75,11 @@ module.exports = {
                 interfaceChannelId: interfaceChannel.id
             });
 
-            message.reply({ embeds: [UI.success('System VoiceMaster zostaĹ‚ poprawnie skonfigurowany w bazie danych.')] });
+            message.reply({ embeds: [UI.success('System VoiceMaster został poprawnie skonfigurowany w bazie danych.')] });
 
         } catch (error) {
             console.error(error);
-            message.reply({ embeds: [UI.error('WystÄ…piĹ‚ bĹ‚Ä…d podczas konfiguracji systemu VoiceMaster.')] });
+            message.reply({ embeds: [UI.error('Wystąpił błąd podczas konfiguracji systemu VoiceMaster.')] });
         }
     },
 };
