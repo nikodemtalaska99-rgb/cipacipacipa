@@ -1,17 +1,21 @@
-version: "1"
+diploiVersion: "v1.0"
 project: discord-bot
 
 components:
-  - name: bot
-    type: nodejs
-    runtime: node-20
-    run: node index.js
+  - identifier: bot
+    package: nodejs-20 # Łączy 'type' i 'runtime' w jedno pole
+    
+    # W nowej wersji używamy 'scripts' zamiast 'run'
+    scripts:
+      run: node index.js
+    
+    # Zmienne środowiskowe
     env:
       TOKEN: ${TOKEN}
-    mounts:
-      # Mapujemy fizyczne miejsce na dysku do folderu /app/assets
+    
+    # Nowy format montowania wolumenów
+    persistence:
       - path: /app/assets
         size: 1Gi
-      # Mapujemy miejsce dla bazy danych quick.db
       - path: /app/json.sqlite
         size: 1Gi
